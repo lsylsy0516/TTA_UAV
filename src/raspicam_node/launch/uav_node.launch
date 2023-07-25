@@ -1,0 +1,17 @@
+<launch>
+    <!-- 启动roscore -->
+    <node name="roscore" pkg="ros" type="core" output="screen"/>
+
+    <!-- 设置环境变量 -->
+    <env name="ROS_MASTER_URI" value="http://localhost:11311"/>
+    <env name="ROS_IP" value="localhost"/>
+
+    <!-- 启动uavData节点 -->
+    <node name="uavData" pkg="ttauav_node" type="uavData" output="screen"/>
+
+    <!-- 启动service节点 -->
+    <node name="service" pkg="ttauav_node" type="service" output="screen"/>
+
+    <!-- 启动uav_node节点 -->
+    <node name="uav_node" pkg="ttauav_node" type="uav_node" output="screen"/>
+</launch>
